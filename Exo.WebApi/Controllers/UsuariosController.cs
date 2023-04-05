@@ -1,5 +1,4 @@
 using Exo.WebApi.Models;
-using Exo.WebApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Exo.WebApi.Controllers
