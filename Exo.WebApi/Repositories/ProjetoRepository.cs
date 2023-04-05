@@ -1,19 +1,16 @@
 using Exo.WebApi.Contexts;
 using Exo.WebApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 namespace Exo.WebApi.Repositories
 {
     public class ProjetoRepository
     {
         private readonly ExoContext _context;
+        
         public ProjetoRepository(ExoContext context)
         {
             _context = context;
         }
-        
+
         public List<Projeto> Listar()
         {
             return _context.Projetos.ToList();
@@ -33,7 +30,7 @@ namespace Exo.WebApi.Repositories
         public void Atualizar(int id, Projeto projeto)
         {
             Projeto projetoBuscado = _context.Projetos.Find(id);
-            if(projetoBuscado != null)
+            if (projetoBuscado != null)
             {
                 projetoBuscado.NomeDoProjeto = projeto.NomeDoProjeto;
                 projetoBuscado.Area = projeto.Area;
@@ -45,7 +42,7 @@ namespace Exo.WebApi.Repositories
 
         public void Deletar(int id)
         {
-            Projeto projetoBuscado  = _context.Projetos.Find(id);
+            Projeto projetoBuscado = _context.Projetos.Find(id);
             _context.Projetos.Remove(projetoBuscado);
             _context.SaveChanges();
         }
