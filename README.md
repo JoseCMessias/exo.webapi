@@ -8,7 +8,7 @@
   conecte ao banco de dados e forneça a lista dos projetos
   cadastrados por meio da função listar().
   
-### Criar o restante do CRUD de projetos, testando-o no Insomnia
+### Criando o restante do CRUD de projetos, testando-o no Insomnia
 
 - 2ª Parte: Nessa etapa, sua a será o desenvolvimento dos c
   ódigos nas classes ProjetosController.cs e ProjetoRepository.cs 
