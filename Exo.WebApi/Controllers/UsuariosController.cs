@@ -1,13 +1,15 @@
-using Exo.WebApi.Models;
+using Exo.WebApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
-
 namespace Exo.WebApi.Controllers
 {
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [ApiController]
     public class UsuariosController : ControllerBase
     {
         private readonly UsuarioRepository _usuarioRepository;
-
-        public UsuariosController(UsuarioRepository usuarioRepository)
+        public UsuariosController(UsuarioRepository
+        usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
         }
@@ -17,7 +19,7 @@ namespace Exo.WebApi.Controllers
         {
             return Ok(_usuarioRepository.Listar());
         }
-
+    
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuario)
         {
@@ -25,11 +27,11 @@ namespace Exo.WebApi.Controllers
             return StatusCode(201);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] 
         public IActionResult BuscarPorId(int id)
         {
-            Usuario usuario = _usuarioRepository.BuscarPorId(id);
-            if(usuario == null)
+            Usuario usuario = _usuarioRepository.BuscaPorId(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
@@ -52,7 +54,7 @@ namespace Exo.WebApi.Controllers
                 return StatusCode(204);
             }
             catch (Exception)
-            {    
+            {
                 return BadRequest();
             }
         }
