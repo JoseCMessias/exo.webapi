@@ -1,7 +1,5 @@
 using Exo.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data.SqlClient;
-using Microsoft.Data.SqlClient;
 namespace Exo.WebApi.Contexts
 {
     public class ExoContext : DbContext
